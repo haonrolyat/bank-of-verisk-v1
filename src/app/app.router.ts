@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { HistoryComponent } from './history/history.component';
 
+// Setup the url routing
 export const router: Routes = [
   { path: '', redirectTo: 'transaction', pathMatch: 'full' },
   { path: 'app', component: AppComponent },

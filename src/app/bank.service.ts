@@ -1,3 +1,6 @@
+// This is really the brains of the actions. Use this to maintain backend model 
+// along with functions to be used across multiple components
+
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -47,6 +50,7 @@ export class BankService {
     return this.account.balanceFormatted;
   }
   
+  // Used to format the time
   AddZero(num, isHours) {
     if (num > 12 && isHours){
       num = num - 12
@@ -54,6 +58,7 @@ export class BankService {
     return (num >= 0 && num < 10) ? "0" + num : num + "";
   }
 
+  // Used to produce a formatted timestamp
   getDateTime(){
     const now = new Date();
     const strDateTime = [[this.AddZero(now.getDate(), false), 
@@ -74,12 +79,9 @@ export class BankService {
     }}
   
 
-
+  // Withdraw requires an update to the data model - i did have overdraw protection but took it off 
+  // It can go negative
    withdraw(amount){
-    /*
-    If I wanted to prevent overdraws
-    if (amount < this.account.balance){
-      */
       this.account.balance -= amount;
       this.account.transactions.unshift({
       date: this.getDateTime(),
@@ -89,15 +91,10 @@ export class BankService {
       balance: this.account.balance,
       balanceFormatted: this.formatAsCurrency(this.account.balance)
       });
-    /*
-    
-    } else {
-      
-    alert('Your account does not have enough money available to cover a payment');
-    }
-    */
     
   }
+
+  // Deposit actions affect teh data model
   deposit(amount){
     this.account.balance += amount;
     this.account.transactions.unshift({
@@ -110,6 +107,7 @@ export class BankService {
     })
     
   }
+  // Get list of transactions used for tables
   getTransactions(){
     return this.account.transactions;
     

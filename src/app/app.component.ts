@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
+
+// Placeholder for backend model
 export class AppComponent {
   bankName = 'Bank of ';
   account: any = {

@@ -7,6 +7,8 @@ import { BankService } from '../bank.service';
   templateUrl: './history.component.html',
   styleUrls: ['./history.component.css']
 })
+
+// Just need the Bank Service brought in for transaction history
 export class HistoryComponent implements OnInit{
   @Input() numberNew: number = 1;
   
