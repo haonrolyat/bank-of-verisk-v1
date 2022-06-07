@@ -1,1 +1,64 @@
-/* Add application styles & imports to this file! */
+/* CSS Styles applying to multiple components of the site */
+
+body {
+  background-color: #fafcff;
+  font-family: 'Arial', sans-serif;
+}
+h1, h2, h3{
+font-family: 'Arial', sans-serif;
+color: #00358e;
+}
+
+section {
+  background-color: #737679;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  font-size:12px;
+  padding: 15px;
+}
+
+.bankHeader{
+padding-left:5px;
+width:100%;
+overflow: auto;
+display:flex;
+flex-flow:row nowrap;
+list-style:none;
+}
+
+.nav a{
+color: #2a7de1;
+font-weight: bold;
+border: 1px solid transparent;
+border-radius: 5px;
+text-decoration:  none;
+padding: 10px;
+}
+.nav a:hover {
+border-color: #00358e;
+/*border: 2px solid #00358e;*/
+}
+.nav {
+margin-bottom: 30px;
+}
+section h4 {
+color: #3766ff;
+text-shadow: 1px 2px black;
+}
+
+.options-list, .options-item {
+list-style: none;
+padding: 5px;
+}
+section, aside {
+  text-shadow: 1px 1px black;
+  
+}
+ul {
+list-style: none;
+
+}
+
+table{
+  margin: auto;
+}

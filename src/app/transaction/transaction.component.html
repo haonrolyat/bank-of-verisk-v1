@@ -1,0 +1,52 @@
+<!-- This page includes a Balance, Amount, the ability to make transactions, see recent transactions -->
+<div>
+<div class="transaction-inputs">
+  <!-- Display Customer Balance  -->
+  <div class="balance" id="balance"><label>Balance: {{ balanceFormatted }}</label></div>
+    <!-- Display Customer Amount of transaction  -->
+  <label>Amount: <input type="number" min="1" max="1000"    [(ngModel)]="numberNew" /></label>
+  <!-- Display buttons to perform transactions according to type  -->
+  <ul class="options-list">
+    <li class="options-item">
+      <button (click)="onWithdraw()">Make a Widthdrawl</button>
+    </li>
+    <li class="options-item">
+      <button (click)="onDeposit()">Deposit Money</button>
+    </li>
+  </ul>
+</div>
+
+</div>
+
+  <!-- Display a section of transactions - I was slicing this at 5 but the slicer isn't working and I don't have time to debug  -->
+<div class="transaction">
+    <section class="display">
+    Recent Transactions
+    <div>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Balance</th>
+          </tr>
+    <!--
+    <tr *ngFor="let transactions of bankService.account.transactions | slice:0:5">
+      <td>{{ transactions.date }}</td> 
+      <td>{{ transactions.type | uppercase }}</td>
+      <td>{{ transactions.amountFormatted }}</td>
+      <td>{{ transactions.balanceFormatted }}</td>
+    </tr>
+  -->
+  <tr *ngFor="let transactions of bankService.account.transactions">
+  <td>{{ transactions.date }}</td> 
+  <td>{{ transactions.type | uppercase }}</td>
+  <td>{{ transactions.amountFormatted }}</td>
+  <td>{{ transactions.balanceFormatted }}</td>
+ </tr>
+  
+    </table>
+    </div>
+
+    </section>
+</div>

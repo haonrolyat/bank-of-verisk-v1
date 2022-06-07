@@ -1,4 +1,17 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<!-- This is the parent component -->
+
+<div style="text-align:center;">
+<div class="bankHeader">
+  <!-- show the bank name pulling from hard coded object -->
+  <h1>
+    Bank of 
+  </h1>
+  <img style="padding-left:10px" src="https://www.verisk.com/siteassets/logos/svg/verisk-logo1.svg">
+</div>
+<!-- app-nav will render the navigation menu buttons -->
+<app-nav></app-nav>
+
+<!-- router-outlet will display the selected navigation menu - show 'Make a Transaction' by default -->
+<router-outlet></router-outlet>
+
+</div>

@@ -3,11 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
+import { TransactionComponent } from './transaction/transaction.component';
+import { routes } from './app.router';
+import { NavComponent } from './nav/nav.component';
+import { HistoryComponent } from './history/history.component';
+import { BankService } from './bank.service';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent ],
-  bootstrap:    [ AppComponent ]
+  imports:      [ BrowserModule, FormsModule, routes ],
+  declarations: [ AppComponent, TransactionComponent, NavComponent, HistoryComponent ],
+  bootstrap:    [ AppComponent ],
+  providers: [BankService]
 })
 export class AppModule { }
